@@ -32,7 +32,7 @@ $(document).ready(function () {
                     'border':'none'
                 });
                 $(".cartLi").click(function () {
-                    location.href="cart.html"
+                    location.href="shop.html"
                 })
             }
         }

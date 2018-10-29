@@ -31,7 +31,32 @@ $(document).ready(function () {
     $("span.user").html($.cookie('user'));
 
 
+    $(document).ajaxComplete(function () {
+        //选择
+        $(".allCheck i").click(function () {
+            console.log(1);
+            $(this).toggleClass('checked');
+            $(".cartPro i").attr('class', $(this).attr('class'));
+            //结算按钮是否能够点击.
+            if ($(".cartPro i.checked").length > 0) {
+                $(".cartTotal button").attr('class', 'selectBtn')
+            } else {
+                $(".cartTotal button").attr('class', '')
+            }
 
+            //总钱数:
+            var totalMoney = 0;
+            console.log($(".cartPro").length);
+
+            for (var i = 0; i < $(".cartPro i.checked").length; i++) {
+                totalMoney = totalMoney + parseInt($(".cartPro i.checked").eq(i).parent().siblings('.proPrice').html())
+
+            }
+            $(".totalPrice b").html(totalMoney)
+
+
+        })
+    })
 
 
 

@@ -33,7 +33,7 @@
                         'border': 'none'
                     });
                     $(".cartLi").click(function () {
-                        location.href = "html/cart.html"
+                        location.href = "html/shop.html"
                     })
                 }
 
@@ -113,7 +113,7 @@
                         var str = `<div class="cartList"><img src="${arrs[parseInt(key) - 1]['url']}" alt=""><span class="proName">${arrs[parseInt(key) - 1]['name']}</span><span class="proPrice">${arrs[parseInt(key) - 1]['price']} x ${dat[key]}</span></div>`
                         $(".cart").append(str);
                     }
-                    var fot = `<div class="totalCart"><span class="totalPro">共${num}件商品</span><a href="html/cart.html">去购物车结算</a><span class="totalPrice">${count}元</span></div>`;
+                    var fot = `<div class="totalCart"><span class="totalPro">共${num}件商品</span><a href="html/shop.html">去购物车结算</a><span class="totalPrice">${count}元</span></div>`;
                     $(".cart").append(fot);
                     $(".cartLi").find('b').html(num);
                     return true;
